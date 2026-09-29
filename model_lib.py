@@ -6,7 +6,7 @@ def premium_predict(data: dict):
     
     if data['age'] <= 25:
         try:
-            model1 = joblib.load('artifacts/young_gr_model.pkl')
+            model1 = joblib.load('artifacts/young_gr_model_2.pkl')
             pred = model1.predict(x)
             return pred
         
@@ -16,7 +16,7 @@ def premium_predict(data: dict):
             raise e
     else:
         try:
-            model2 = joblib.load('artifacts/rest_model.pkl')
+            model2 = joblib.load('artifacts/rest_model_2.pkl')
             pred = model2.predict(x.drop('genetical_risk', axis = 1))
             return pred
         
